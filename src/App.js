@@ -4,6 +4,8 @@ import { ViewportProvider } from "./utils/ViewportContext"
 import "./index.css"
 import Navbar from "./Components/Navbar"
 import Home from "./pages/Home"
+import Stats from "./pages/Stats"
+
 
 function App() {
 	return (
@@ -11,6 +13,7 @@ function App() {
 				<Navbar />
 				<Routes>
 					<Route path="/" element={<Home />} />
+					<Route path="/user/:id" element={<Stats />} />
 				</Routes>
 			</ViewportProvider>
 	);
