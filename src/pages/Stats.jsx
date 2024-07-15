@@ -24,7 +24,7 @@ export default function Stats() {
 	const { viewportWidth } = useViewport()
 
 	// switch to false for use api data, or true to use mocked data
-	const use_mocked_data = false
+	const use_mocked_data = true
 	// show data origin in the console
 	use_mocked_data ? console.log("données mockées") : console.log("données de l'api")
 
