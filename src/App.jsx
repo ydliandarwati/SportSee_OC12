@@ -8,14 +8,15 @@ import Profil from './pages/Profil/Profil'
 
 
 function App() {
+	console.log(document.location.pathname)
 	return (
 		<div className="App">
 			<Header />
 			<Sidebar />
 			<main>
 				<Routes>
-					<Route path="/" element={<Navigate replace to="/home" />} />
-					<Route path="/home" element={<Home />} />
+					{/* <Route path="/" element={<Navigate replace to="/home" />} /> */}
+					<Route exact path="/" element={<Home />} />
 					<Route exact path="/profil/:userId" element={<Profil />} /> 
 					<Route exact path="/settings" element={<Home />} />
 					<Route exact path="/community" element={<Home />} /> 

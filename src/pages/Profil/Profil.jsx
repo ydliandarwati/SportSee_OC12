@@ -23,22 +23,22 @@ function Profil() {
 	const user = useFetch(
 		userId,
 		`http://localhost:3000/user/${userId}`,
-		'SportSee_OC12/data/user-main-data.json'
+		document.location.pathname + '/data/user-main-data.json'
 	)
 	const activity = useFetch(
 		userId,
 		`http://localhost:3000/user/${userId}/activity`,
-		'SportSee_OC12/data/user-activity.json'
+		document.location.pathname + '/data/user-activity.json'
 	)
 	const averageSessions = useFetch(
 		userId,
 		`http://localhost:3000/user/${userId}/average-sessions`,
-		'SportSee_OC12/data/user-average-sessions.json'
+		document.location.pathname + '/data/user-average-sessions.json'
 	)
 	const performance = useFetch(
 		userId,
 		`http://localhost:3000/user/${userId}/performance`,
-		'SportSee_OC12/data/user-performance.json'
+		document.location.pathname + '/data/user-performance.json'
 	)
 
 	// to return on dataObject with the data from the API if available, or the mocked data if not.
