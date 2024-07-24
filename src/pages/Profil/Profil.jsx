@@ -30,22 +30,22 @@ function Profil() {
 	const user = useFetch(
 		`http://localhost:3000/user/${userId}`,
 		userId,
-		'/data/user-main-data.json'
+		'SportSee_OC12/data/user-main-data.json'
 	)
 	const activity = useFetch(
 		`http://localhost:3000/user/${userId}/activity`,
 		userId,
-		'/data/user-activity.json'
+		'SportSee_OC12/data/user-activity.json'
 	)
 	const averageSessions = useFetch(
 		`http://localhost:3000/user/${userId}/average-sessions`,
 		userId,
-		'/data/user-average-sessions.json'
+		'SportSee_OC12/data/user-average-sessions.json'
 	)
 	const performance = useFetch(
 		`http://localhost:3000/user/${userId}/performance`,
 		userId,
-		'/data/user-performance.json'
+		'SportSee_OC12/data/user-performance.json'
 	)
 
 	/**
