@@ -1,5 +1,5 @@
 {
-"homepage": "https://ydliandarwati.github.io/SportSee_OC12",
+  "homepage": "https://ydliandarwati.github.io/SportSee_OC12",
   "name": "front",
   "version": "0.1.0",
   "private": true,
@@ -14,11 +14,12 @@
     "react-router-dom": "^6.24.1",
     "react-scripts": "5.0.1",
     "recharts": "^2.12.7",
+    "sass": "^1.77.8",
     "styled-components": "^6.1.11",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-	"predeploy": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
