@@ -1,16 +1,6 @@
 import { useState, useEffect } from 'react'
 
-/**
- * This function will fetch data from an API, if the API fails, it fetches data from mocked data.
- * Also return a boolean indicating whether the data is loading, and two booleans indicating whether there was errors on the API and mocked data.
- *
- * @category Custom Hooks
- * @param {string} urlAPI - The url of the API.
- * @param {string} userID - The userID for the mocked data.
- * @param {string} urlMockedData - The url of the mocked data.
- * @returns An object with the following properties: isLoading, apiData, mockedData, errorAPI, errorMocked.
- */
-export function useFetch(urlAPI, userID, urlMockedData) {
+export function useFetch(userID, urlAPI, urlMockedData) {
 	const [apiData, setApiData] = useState(null)
 	const [mockedData, setMockedData] = useState(null)
 	const [isLoading, setLoading] = useState(true)

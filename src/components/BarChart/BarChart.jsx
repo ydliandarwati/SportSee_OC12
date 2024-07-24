@@ -14,17 +14,11 @@ import CustomToolTip from './CustomToolTip'
 
 import './style.scss'
 
-/**
- * Render a BarChart using Recharts
- *
- * @category Components
- * @component
- * @returns { React.Component } A React component
- */
-function ChartActivity({ data }) {
+
+function ChartBar({ data }) {
 	return (
 		<>
-			<h3 className="chartactivity-title">Activité quotidienne</h3>
+			<h3 className="ChartBar-title">Activité quotidienne</h3>
 			<ResponsiveContainer width="100%" height="100%">
 				<BarChart data={data} barSize={7} barGap={8}>
 					<CartesianGrid strokeDasharray="3" vertical={false} />
@@ -79,11 +73,8 @@ function ChartActivity({ data }) {
 	)
 }
 
-ChartActivity.propTypes = {
-	/**
-	 * Data to be displayed in the chart
-	 */
+ChartBar.propTypes = {
 	data: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-export default ChartActivity
+export default ChartBar

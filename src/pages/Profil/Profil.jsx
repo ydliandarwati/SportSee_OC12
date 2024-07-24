@@ -2,11 +2,11 @@ import { useParams } from 'react-router-dom'
 
 import { useFetch } from '../../utils/useFetch'
 import Card from '../../components/Card/Card'
-import ChartsCard from '../../components/ChartsCard/ChartsCard'
-import ChartActivity from '../../components/ChartActivity/ChartActivity'
-import ChartAverageSessions from '../../components/ChartAverageSessions/ChartAcerageSessions'
-import ChartGoal from '../../components/ChartGoal/ChartGoal'
-import ChartPerformance from '../../components/ChartPerformance/ChartPerformance'
+import ChartsCard from '../../components/ChartsCard/LineChart'
+import ChartBar from '../../components/BarChart/BarChart'
+import ChartLine from '../../components/LineChart/LineChart'
+import ChartRadial from '../../components/RadialChart/RadialChart'
+import ChartRadar from '../../components/RadarChart/RadarChart'
 
 import energy from '../../assets/energy.svg'
 import chicken from '../../assets/chicken.svg'
@@ -15,45 +15,33 @@ import cheeseburger from '../../assets/cheeseburger.svg'
 
 import './style.scss'
 
-/**
- * Render Profil page
- *
- * @category Pages
- * @component
- * @returns { React.Component } A React component
- */
 function Profil() {
 	document.title = 'Profil - SportSee'
 
 	const { userId } = useParams()
 	/* Fetch the data from API or mocked data */
 	const user = useFetch(
-		`http://localhost:3000/user/${userId}`,
 		userId,
+		`http://localhost:3000/user/${userId}`,
 		'SportSee_OC12/data/user-main-data.json'
 	)
 	const activity = useFetch(
-		`http://localhost:3000/user/${userId}/activity`,
 		userId,
+		`http://localhost:3000/user/${userId}/activity`,
 		'SportSee_OC12/data/user-activity.json'
 	)
 	const averageSessions = useFetch(
-		`http://localhost:3000/user/${userId}/average-sessions`,
 		userId,
+		`http://localhost:3000/user/${userId}/average-sessions`,
 		'SportSee_OC12/data/user-average-sessions.json'
 	)
 	const performance = useFetch(
-		`http://localhost:3000/user/${userId}/performance`,
 		userId,
+		`http://localhost:3000/user/${userId}/performance`,
 		'SportSee_OC12/data/user-performance.json'
 	)
 
-	/**
-	 * Function to return on dataObject with the data from the API if available, or the mocked data if not.
-	 * @param {Object} dataObject - Object that will contain the data .
-	 * @param {Object} apiData - Data from the API.
-	 * @returns The dataObject is returned.
-	 */
+	// to return on dataObject with the data from the API if available, or the mocked data if not.
 	const formatData = (dataObject, apiData) => {
 		if (apiData.apiData) {
 			dataObject = apiData.apiData
@@ -88,7 +76,7 @@ function Profil() {
 		)
 	}
 
-	/* If the fetches on the API and the mocked data returns errors, display a error message to the user */
+	// when fetch API/mocked data fails, show an error message
 	if (
 		(user.errorAPI && user.errorMocked) ||
 		(activity.errorAPI && activity.errorMocked) ||
@@ -97,7 +85,7 @@ function Profil() {
 	) {
 		return (
 			<section className="profil-wrapper">
-				<h2 className="center">Une erreur est survenue !</h2>
+				<h2 className="center">Erreur lors du chargement des données !</h2>
 			</section>
 		)
 	}
@@ -119,7 +107,7 @@ function Profil() {
 						<div className="dashboard-charts-wrapper">
 							<div className="activity-charts">
 								{activityData && (
-									<ChartActivity
+									<ChartBar
 										data={activityData.sessions}
 									/>
 								)}
@@ -129,7 +117,7 @@ function Profil() {
 									<ChartsCard
 										className="average-sessions"
 										content={
-											<ChartAverageSessions
+											<ChartLine
 												data={
 													averageSessionsData.sessions
 												}
@@ -142,7 +130,7 @@ function Profil() {
 									<ChartsCard
 										className="performance"
 										content={
-											<ChartPerformance
+											<ChartRadar
 												data={performanceData}
 											/>
 										}
@@ -151,7 +139,7 @@ function Profil() {
 								{userData && (
 									<ChartsCard
 										className="score"
-										content={<ChartGoal data={userData} />}
+										content={<ChartRadial data={userData} />}
 									/>
 								)}
 							</div>

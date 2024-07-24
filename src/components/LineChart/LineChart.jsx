@@ -12,14 +12,7 @@ import CustomToolTip from './CustomToolTip'
 
 import './style.scss'
 
-/**
- * Render a LineChart using Recharts
- *
- * @category Components
- * @component
- * @returns { React.Component } A React component
- */
-function ChartAverageSessions({ data }) {
+function ChartLine({ data }) {
 	const formatLabel = (value) => {
 		if (value === 1) return 'L'
 		if (value === 2) return 'M'
@@ -100,11 +93,11 @@ function ChartAverageSessions({ data }) {
 	)
 }
 
-ChartAverageSessions.propTypes = {
+ChartLine.propTypes = {
 	/**
 	 * Data to be displayed in the chart
 	 */
 	data: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
-export default ChartAverageSessions
+export default ChartLine

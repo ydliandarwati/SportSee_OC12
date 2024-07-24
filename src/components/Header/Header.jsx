@@ -7,14 +7,7 @@ import logo from '../../assets/logo.svg'
 
 import './style.scss'
 
-/**
- * Render the Header with a logo and a navbar
- * The user's profile page is determined by the userToggle state in the Context
- *
- * @category Components
- * @component
- * @returns { React.Component } A React component
- */
+
 function Header() {
 	const { userToggle } = useContext(Context)
 	const userId = userToggle ? 18 : 12

@@ -9,32 +9,9 @@ import {
 } from 'recharts'
 import PropTypes from 'prop-types'
 
-/**
- * Render a RadarChart using Recharts
- *
- * @category Components
- * @component
- * @returns { React.Component } A React component
- */
-function ChartPerformance({ data }) {
-	/**
-	 * Function to render the labels of the chart in a Text component
-	 *
-	 * @param { Object } payload - The payload of the labels
-	 * @param { Number } x - The x position of the label
-	 * @param { Number } y - The y position of the label
-	 * @param { Number } cx - The x position of the center of the label
-	 * @param { Number } cy - The y position of the center of the label
-	 * @param { Object } rest - The rest of the props of the label
-	 * @returns A function that returns a Text component
-	 */
+// create a radar chart (for user performance)
+function ChartRadar({ data }) {
 	const renderPolarAngleAxis = ({ payload, x, y, cx, cy, ...rest }) => {
-		/**
-		 * Function to translate the labels of the chart
-		 *
-		 * @param { String } value - The value of the label
-		 * @returns { String } The translated value of the label
-		 */
 		const formatLabel = (value) => {
 			if (value === 'Energy') return 'Energie'
 			if (value === 'Strength') return 'Force'
@@ -86,11 +63,11 @@ function ChartPerformance({ data }) {
 	)
 }
 
-ChartPerformance.propTypes = {
+ChartRadar.propTypes = {
 	/**
 	 * Data to be displayed in the chart
 	 */
 	data: PropTypes.object.isRequired,
 }
 
-export default ChartPerformance
+export default ChartRadar

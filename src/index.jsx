@@ -13,7 +13,4 @@ root.render(
 	</HashRouter>
 );
 
-// "homepage": "https://ydliandarwati.github.io/SportSee_OC12",
-
-
 

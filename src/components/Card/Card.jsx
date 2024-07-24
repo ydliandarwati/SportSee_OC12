@@ -1,14 +1,7 @@
 import PropTypes from 'prop-types'
-
 import './style.scss'
 
-/**
- * Render a div (card) containing an image and text
- *
- * @category Components
- * @component
- * @returns { React.Component } A React component
- */
+// create a div (card) containing an image and text (for user data: calories, ....)
 function Card({ userKeyData, unit, subtitle, className, logo }) {
 	return (
 		<div className="card ">

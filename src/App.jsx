@@ -5,8 +5,6 @@ import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar'
 import Home from './pages/Home/Home'
 import Profil from './pages/Profil/Profil'
-import Settings from './pages/Settings/Settings'
-import Community from './pages/Community/Community'
 
 
 function App() {
@@ -19,8 +17,8 @@ function App() {
 					<Route path="/" element={<Navigate replace to="/home" />} />
 					<Route path="/home" element={<Home />} />
 					<Route exact path="/profil/:userId" element={<Profil />} /> 
-					<Route exact path="/settings" element={<Settings />} />
-					<Route exact path="/community" element={<Community />} /> 
+					<Route exact path="/settings" element={<Home />} />
+					<Route exact path="/community" element={<Home />} /> 
 				</Routes>
 			</main>
 		</div>

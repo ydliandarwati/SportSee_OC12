@@ -3,19 +3,13 @@ import PropTypes from 'prop-types'
 
 import './style.scss'
 
-/**
- * Render a Radial Bar Chart using Recharts
- *
- * @category Components
- * @component
- * @returns { React.Component } A React component
- */
-function ChartGoal({ data }) {
+// create a radial chart  
+function ChartRadial({ data }) {
 	const score = data.todayScore ? data.todayScore : data.score
 	const dataArray = [{ name: 'score', value: score }]
 	return (
 		<>
-			<h3 className="chartgoal-title">Score</h3>
+			<h3 className="radialchart-title">Score</h3>
 			<ResponsiveContainer width="70%" height="70%" className={'center'}>
 				<RadialBarChart
 					innerRadius="0%"
@@ -39,7 +33,7 @@ function ChartGoal({ data }) {
 					/>
 				</RadialBarChart>
 			</ResponsiveContainer>
-			<div className="chartgoal-label center">
+			<div className="radialchart-label center">
 				<p className="percent">
 					{data.score && data.score * 100}
 					{data.todayScore && data.todayScore * 100}%
@@ -51,11 +45,11 @@ function ChartGoal({ data }) {
 	)
 }
 
-ChartGoal.propTypes = {
+ChartRadial.propTypes = {
 	/**
 	 * Data to be displayed in the chart
 	 */
 	data: PropTypes.object.isRequired,
 }
 
-export default ChartGoal
+export default ChartRadial

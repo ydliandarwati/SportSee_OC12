@@ -1,17 +1,8 @@
 
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
-
-
 import './style.scss'
 
-/**
- * Render Home page
- *
- * @category Pages
- * @component
- * @returns { React.Component } A React component
- */
 function Home() {
 	document.title = 'Accueil - SportSee'
 	return (
