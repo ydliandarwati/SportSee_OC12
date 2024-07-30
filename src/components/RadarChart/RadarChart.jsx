@@ -7,7 +7,6 @@ import {
 	PolarRadiusAxis,
 	Text,
 } from 'recharts'
-import PropTypes from 'prop-types'
 
 // create a radar chart (for user performance)
 function ChartRadar({ data }) {
@@ -40,7 +39,7 @@ function ChartRadar({ data }) {
 	return (
 		<>
 			<ResponsiveContainer width="100%" height="100%">
-				<RadarChart outerRadius={90} data={[...data.data].reverse()}>
+				<RadarChart outerRadius={80} data={[...data.data].reverse()}>
 					<PolarGrid radialLines={false} />
 					<PolarAngleAxis
 						dataKey="kind"
@@ -62,12 +61,4 @@ function ChartRadar({ data }) {
 		</>
 	)
 }
-
-ChartRadar.propTypes = {
-	/**
-	 * Data to be displayed in the chart
-	 */
-	data: PropTypes.object.isRequired,
-}
-
 export default ChartRadar

@@ -8,7 +8,6 @@ import {
 	Legend,
 	ResponsiveContainer,
 } from 'recharts'
-import PropTypes from 'prop-types'
 
 import CustomToolTip from './CustomToolTip'
 
@@ -73,8 +72,6 @@ function ChartBar({ data }) {
 	)
 }
 
-ChartBar.propTypes = {
-	data: PropTypes.arrayOf(PropTypes.object).isRequired,
-}
+
 
 export default ChartBar

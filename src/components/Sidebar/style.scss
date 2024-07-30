@@ -16,6 +16,16 @@
 	}
 }
 
+.sidebar-button-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 64px;
+	position: absolute;
+	top: 20%;
+	left: 26px;
+}
+
 .copyright {
 	position: absolute;
 	bottom: 8rem;

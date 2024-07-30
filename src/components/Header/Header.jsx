@@ -1,16 +1,9 @@
-import { useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-	
-import { Context } from '../../context/Context'
-
 import logo from '../../assets/logo.svg'
-
 import './style.scss'
 
-
 function Header() {
-	const { userToggle } = useContext(Context)
-	const userId = userToggle ? 18 : 12
+	const userId = 18 // default userId
 
 	return (
 		<header className="nav-wrapper">

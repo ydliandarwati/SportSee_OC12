@@ -1,7 +1,5 @@
-import PropTypes from 'prop-types'
-
-function CustomToolTip({ active, payload }) {
-	if (active && payload && payload.length) {
+function CustomToolTip({ payload }) {
+	if (payload && payload.length) {
 		return (
 			<div className="tooltip">
 				<p>{payload[0].value + 'kg'}</p>
@@ -12,9 +10,5 @@ function CustomToolTip({ active, payload }) {
 	return null
 }
 
-CustomToolTip.propTypes = {
-	active: PropTypes.bool,
-	payload: PropTypes.arrayOf(PropTypes.object),
-}
 
 export default CustomToolTip

@@ -1,5 +1,4 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts'
-import PropTypes from 'prop-types'
 
 import './style.scss'
 
@@ -43,13 +42,6 @@ function ChartRadial({ data }) {
 			</div>
 		</>
 	)
-}
-
-ChartRadial.propTypes = {
-	/**
-	 * Data to be displayed in the chart
-	 */
-	data: PropTypes.object.isRequired,
 }
 
 export default ChartRadial

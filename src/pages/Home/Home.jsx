@@ -15,9 +15,7 @@ function Home() {
 		<P>
 			<Link to="/profil/18">User 18</Link>
 		</P>
-		</Wrapper>
-
-		
+		</Wrapper>	
 	)
 }
 export default Home
@@ -25,10 +23,6 @@ export default Home
 const Wrapper = styled.main`
 	margin-left: 150px;
 	margin-top: 120px;
-	@media (max-width: 700px) {
-		margin: 100px 0;
-		padding: 0 30px;
-	}
 `
 const H1 = styled.h1`
 	font-size: 40px;

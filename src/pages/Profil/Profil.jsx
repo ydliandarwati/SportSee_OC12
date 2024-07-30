@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 
 import { useFetch } from '../../utils/useFetch'
 import Card from '../../components/Card/Card'
-import ChartsCard from '../../components/ChartsCard/LineChart'
+import ChartsCard from '../../components/ChartsCard/ChartsCard'
 import ChartBar from '../../components/BarChart/BarChart'
 import ChartLine from '../../components/LineChart/LineChart'
 import ChartRadial from '../../components/RadialChart/RadialChart'
@@ -42,12 +42,12 @@ function Profil() {
 	)
 
 	// to return on dataObject with the data from the API if available, or the mocked data if not.
-	const formatData = (dataObject, apiData) => {
-		if (apiData.apiData) {
-			dataObject = apiData.apiData
+	const formatData = (dataObject, data) => {
+		if (data.apiData) {
+			dataObject = data.apiData
 			return dataObject
-		} else if (apiData.mockedData) {
-			dataObject = apiData.mockedData
+		} else if (data.mockedData) {
+			dataObject = data.mockedData
 			return dataObject
 		}
 	}
@@ -109,7 +109,7 @@ function Profil() {
 								{activityData && (
 									<ChartBar
 										data={activityData.sessions}
-									/>
+									/>	
 								)}
 							</div>
 							<div className="small-card-wrapper">
@@ -124,7 +124,7 @@ function Profil() {
 											/>
 										}
 									/>
-								)}
+								)}								
 
 								{performanceData && (
 									<ChartsCard
@@ -136,6 +136,7 @@ function Profil() {
 										}
 									/>
 								)}
+
 								{userData && (
 									<ChartsCard
 										className="score"

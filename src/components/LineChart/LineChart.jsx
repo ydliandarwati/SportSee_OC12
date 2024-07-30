@@ -6,13 +6,15 @@ import {
 	YAxis,
 	ResponsiveContainer,
 } from 'recharts'
-import PropTypes from 'prop-types'
 
 import CustomToolTip from './CustomToolTip'
 
 import './style.scss'
 
+// create line chart (input data)
 function ChartLine({ data }) {
+
+	// format the label (based on weekdays)
 	const formatLabel = (value) => {
 		if (value === 1) return 'L'
 		if (value === 2) return 'M'
@@ -30,7 +32,7 @@ function ChartLine({ data }) {
 				Durée moyenne des <br />
 				sessions
 			</h3>
-			<ResponsiveContainer width="90%" height="70%" className={'center'}>
+			<ResponsiveContainer width="70%" height="70%" className={'center'}>
 				<LineChart data={data}>
 					<Line
 						type="natural"
@@ -91,13 +93,6 @@ function ChartLine({ data }) {
 			</ResponsiveContainer>
 		</>
 	)
-}
-
-ChartLine.propTypes = {
-	/**
-	 * Data to be displayed in the chart
-	 */
-	data: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default ChartLine

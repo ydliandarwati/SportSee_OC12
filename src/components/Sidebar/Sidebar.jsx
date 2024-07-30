@@ -10,7 +10,7 @@ import haltere from '../../assets/haltere.svg'
 function Sidebar() {
 	return (
 		<aside className="sidebar">
-			<div className="sidebar-button-wrapper center">
+			<div className="sidebar-button-wrapper">
 				<SidebarButton logo={yoga} />
 				<SidebarButton logo={swimming} />
 				<SidebarButton logo={biking} />
