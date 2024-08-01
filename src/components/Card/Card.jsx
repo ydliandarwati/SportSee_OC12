@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import './style.scss'
 
 // create a div (card) containing an image and text (for user data: calories, ....)
@@ -17,29 +16,6 @@ function Card({ userKeyData, unit, subtitle, className, logo }) {
 			</div>
 		</div>
 	)
-}
-
-Card.propTypes = {
-	/**
-	 * Data number to be displayed in the card
-	 */
-	userKeyData: PropTypes.number.isRequired,
-	/**
-	 * Unit of the data
-	 */
-	unit: PropTypes.string.isRequired,
-	/**
-	 * Subtitle of the card
-	 */
-	subtitle: PropTypes.string.isRequired,
-	/**
-	 * Class name of the card
-	 */
-	className: PropTypes.string,
-	/**
-	 * Logo path of the card
-	 */
-	logo: PropTypes.string.isRequired,
 }
 
 export default Card
